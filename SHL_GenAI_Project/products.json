@@ -1,0 +1,44 @@
+{
+  "products": [
+    {
+      "id": "P1",
+      "title": "Logical Reasoning Test",
+      "description": "A test to assess logical thinking and problem solving using patterns and sequences.",
+      "skills": ["logical reasoning", "problem solving"],
+      "tags": ["reasoning", "inductive"],
+      "durationMinutes": 30
+    },
+    {
+      "id": "P2",
+      "title": "Verbal Ability Test",
+      "description": "Evaluates comprehension, vocabulary and verbal reasoning.",
+      "skills": ["verbal ability", "comprehension"],
+      "tags": ["verbal", "language"],
+      "durationMinutes": 25
+    },
+    {
+      "id": "P3",
+      "title": "Numerical Reasoning Test",
+      "description": "Measures speed and accuracy with numbers, basic statistics and interpretation.",
+      "skills": ["numerical reasoning", "math"],
+      "tags": ["numerical", "quant"],
+      "durationMinutes": 20
+    },
+    {
+      "id": "P4",
+      "title": "Abstract Reasoning Test",
+      "description": "Assesses pattern recognition and abstract thinking using shapes and diagrams.",
+      "skills": ["abstract reasoning", "pattern recognition"],
+      "tags": ["abstract", "inductive"],
+      "durationMinutes": 18
+    },
+    {
+      "id": "P5",
+      "title": "Situational Judgement Test",
+      "description": "Measures judgment and decision-making in workplace scenarios.",
+      "skills": ["judgement", "decision making"],
+      "tags": ["sjt", "behavioural"],
+      "durationMinutes": 35
+    }
+  ]
+}

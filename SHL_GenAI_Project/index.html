@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SHL RAG Recommender</title>
+    <style>
+      body { font-family: Arial, Helvetica, sans-serif; margin: 20px; }
+      input, button { padding: 8px; }
+      .card { border: 1px solid #ccc; margin: 10px; padding: 10px; border-radius: 5px; }
+    </style>
+  </head>
+  <body>
+    <h2>SHL GenAI Recommendation Demo</h2>
+    <p>Enter a skill, assessment type, or a short query and press Search.</p>
+    <input id="query" placeholder="Enter skill or assessment type" style="width:70%" />
+    <button id="searchBtn">Search</button>
+    <div id="result"></div>
+
+    <script>
+      document.getElementById('searchBtn').addEventListener('click', getRecommendations);
+      async function getRecommendations() {
+        const query = document.getElementById('query').value;
+        const res = await fetch(`/api/recommend?query=${encodeURIComponent(query)}`);
+        const data = await res.json();
+        const div = document.getElementById('result');
+        div.innerHTML = '';
+        if (!data.recommendations || data.recommendations.length === 0) {
+          div.innerHTML = '<p>No results. Make sure you have created `products.json` or run the converter with the Excel file.</p>';
+          return;
+        }
+        data.recommendations.forEach(r => {
+          const el = document.createElement('div');
+          el.className = 'card';
+          el.innerHTML = `<b>${escapeHtml(r.title)}</b> <small>(${r.id})</small><br>
+                          <div>${escapeHtml(r.description || '')}</div>
+                          <div><i>Skills:</i> ${ (r.skills||[]).join(', ') }</div>
+                          <div><i>Tags:</i> ${ (r.tags||[]).join(', ') }</div>
+                          <div><b>Score:</b> ${r.score}</div>`;
+          div.appendChild(el);
+        });
+      }
+      function escapeHtml(text) {
+        if (!text) return '';
+        return text.replace(/[&<>"']/g, function (c) {
+          return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":"&#39;"}[c];
+        });
+      }
+    </script>
+  </body>
+</html>
