@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: shl-genai
+    env: docker
+    branch: main
+    dockerfilePath: ./SHL_GenAI_Project/Dockerfile
+    buildCommand: ""
+    startCommand: ""
+    healthCheckPath: /health
+    autoDeploy: true
