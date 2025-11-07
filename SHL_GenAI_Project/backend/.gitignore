@@ -1,0 +1,10 @@
+# Backend specific ignores
+node_modules/
+npm-debug.log*
+
+# If you build bundles
+dist/
+build/
+
+# Environment files
+.env
