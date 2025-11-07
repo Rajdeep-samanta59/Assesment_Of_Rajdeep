@@ -1,0 +1,16 @@
+node_modules
+**/node_modules
+.venv
+venv
+__pycache__
+*.pyc
+.pytest_cache
+.DS_Store
+*.log
+/*.tgz
+dist
+build
+*.env
+Gen_AI Dataset.xlsx
+SHL - AI Intern RE Generative AI assignment.pdf
+*.pdf

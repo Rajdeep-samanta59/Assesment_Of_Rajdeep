@@ -36,6 +36,15 @@ app.get('/api/recommend', (req, res) => {
   res.json({ query: q, recommendations: result });
 });
 
+// health check for platform probes
+app.get('/health', (req, res) => {
+  res.json({ status: 'ok', port: PORT, productsLoaded: data.length });
+});
+
+// log static serving information
+console.log('Static files served from:', path.join(__dirname, '..'));
+console.log('Products loaded:', data.length);
+
 // fallback to index.html for SPA
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'index.html'));
