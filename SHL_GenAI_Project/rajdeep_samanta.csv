@@ -1,6 +1,11 @@
 query,recommended_ids
-logical reasoning,P1;P4
+logical reasoning,P1;P3;P4;P2
 verbal ability,P2
-numerical,P3
-abstract patterns,P4
-workplace judgement,P5
+numerical reasoning,P3;P1;P4;P2
+abstract reasoning,P4;P1;P3;P2
+situational judgement,P5
+problem solving,P1
+comprehension,P2
+pattern recognition,P4;P1
+decision making,P5
+vocabulary,P2
