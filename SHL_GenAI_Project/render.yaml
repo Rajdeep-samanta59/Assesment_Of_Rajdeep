@@ -1,10 +1,10 @@
 services:
   - type: web
     name: shl-genai
-    env: docker
+    env: node
     branch: main
-    dockerfilePath: ./SHL_GenAI_Project/Dockerfile
-    buildCommand: ""
-    startCommand: ""
+    # Use the backend subfolder for build and start commands in this monorepo
+    buildCommand: "npm --prefix SHL_GenAI_Project/backend install"
+    startCommand: "node SHL_GenAI_Project/backend/index.js"
     healthCheckPath: /health
     autoDeploy: true
