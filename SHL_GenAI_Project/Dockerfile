@@ -17,3 +17,4 @@ EXPOSE 8080
 
 # Start the backend (Render will set PORT env)
 CMD ["node", "SHL_GenAI_Project/backend/index.js"]
+
